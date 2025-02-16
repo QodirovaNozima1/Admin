@@ -8,6 +8,7 @@ import AboutUs from '../pages/admin/Aboutus'
 import Homework from '../pages/admin/Homework'
 import Recycle from '../pages/admin/Recycle'
 import Pick from '../pages/admin/Pick'
+import Header from '../components/Header'
 // import Home from '../pages/Home'
 // import Contact from '../pages/Contact'
 // import About from '../pages/About'
@@ -33,6 +34,7 @@ const RouterMain = () => {
             <Route path='/' element={<SuspenseContainer><Home/></SuspenseContainer>}/>
             <Route path='about' element={<SuspenseContainer><About/></SuspenseContainer>}/>
             <Route path='contact' element={<SuspenseContainer><Contact/></SuspenseContainer>}/>
+            <Route path='header' element={<SuspenseContainer><Header/></SuspenseContainer>}/>
         </Route>
         <Route path='admin' element={<SuspenseContainer><Admin/></SuspenseContainer>}>
           <Route path='groups' element={<SuspenseContainer><Groups/></SuspenseContainer>}>
