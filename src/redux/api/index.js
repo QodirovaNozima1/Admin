@@ -4,7 +4,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 // CUD - post, put, delete - mutation
 export const mainApi = createApi({
   reducerPath: 'mainApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'https://67ac6f165853dfff53daaf48.mockapi.io' }),
+  baseQuery: fetchBaseQuery({ baseUrl: 'https://67ac718b5853dfff53daba71.mockapi.io' }),
   endpoints: () => ({}),
-  tagTypes: ["BLOG", "PRODUCT"]
+  tagTypes: ["CARS"]
 })

@@ -1,19 +1,13 @@
 import React, { lazy } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { SuspenseContainer } from '../utils'
-import Contacts from '../pages/admin/Contacts'
-import Blogs from '../pages/admin/Blogs'
-import Menu from '../pages/admin/Menu'
-import AboutUs from '../pages/admin/Aboutus'
-import Homework from '../pages/admin/Homework'
-import Recycle from '../pages/admin/Recycle'
-import Pick from '../pages/admin/Pick'
-import Header from '../components/Header'
-import Home from '../pages/Home'
-import Contact from '../pages/Contact'
-import About from '../pages/About'
-import Header from '../components/Header'
-import Layout from '../pages/Layout'
+const Cards = lazy(()=> import("../pages/admin/Cards"))
+const Create = lazy(()=> import("../pages/admin/Create"))
+const Menu = lazy(()=> import("../pages/admin/Menu"))
+const AboutUs = lazy(()=> import("../pages/admin/Aboutus"))
+const Homework = lazy(()=> import("../pages/admin/Homework"))
+const Recycle = lazy(()=> import("../pages/admin/Recycle"))
+const Pick = lazy(()=> import("../pages/admin/Pick"))
 const Home = lazy(()=> import("../pages/Home"))
 const About = lazy(()=> import("../pages/About"))
 const Contact = lazy(()=> import("../pages/Contact"))
@@ -35,7 +29,6 @@ const RouterMain = () => {
             <Route path='/' element={<SuspenseContainer><Home/></SuspenseContainer>}/>
             <Route path='about' element={<SuspenseContainer><About/></SuspenseContainer>}/>
             <Route path='contact' element={<SuspenseContainer><Contact/></SuspenseContainer>}/>
-            <Route path='header' element={<SuspenseContainer><Header/></SuspenseContainer>}/>
         </Route>
         <Route path='admin' element={<SuspenseContainer><Admin/></SuspenseContainer>}>
           <Route path='groups' element={<SuspenseContainer><Groups/></SuspenseContainer>}>
@@ -45,8 +38,8 @@ const RouterMain = () => {
           </Route>
           <Route path='users' element={<SuspenseContainer><Users/></SuspenseContainer>}/>
           <Route path='shop' element={<SuspenseContainer><Shop/></SuspenseContainer>}/>
-          <Route path='contacts' element={<SuspenseContainer><Contacts/></SuspenseContainer>}/>
-          <Route path='blogs' element={<SuspenseContainer><Blogs/></SuspenseContainer>}/>
+          <Route path='cards' element={<SuspenseContainer><Cards/></SuspenseContainer>}/>
+          <Route path='create' element={<SuspenseContainer><Create/></SuspenseContainer>}/>
           <Route path='menu' element={<SuspenseContainer><Menu/></SuspenseContainer>}/>
           <Route path='aboutus' element={<SuspenseContainer><AboutUs/></SuspenseContainer>}/>
           <Route path='homework' element={<SuspenseContainer><Homework/></SuspenseContainer>}/>

@@ -8,3 +8,9 @@
     color: dodgerblue ;
     text-decoration: underline;
 }
+.container{
+    max-width: 1248px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 12px;
+  }

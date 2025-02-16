@@ -1,13 +1,9 @@
 import React from 'react'
-import { useGetSingleBlogQuery } from '../redux/api/blog.api'
-import { useParams } from 'react-router-dom'
 
 const Contact = () => {
-  const {id} = useParams()
-  const {data, isLoading, isError, error} = useGetSingleBlogQuery(id)
   return (
-    <div>Contact
-      
+    <div className='h-[500px] text-3xl bg-slate-300 flex justify-center items-center'>
+      Contact 
     </div>
   )
 }
