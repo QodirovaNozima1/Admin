@@ -9,10 +9,11 @@ import Homework from '../pages/admin/Homework'
 import Recycle from '../pages/admin/Recycle'
 import Pick from '../pages/admin/Pick'
 import Header from '../components/Header'
-// import Home from '../pages/Home'
-// import Contact from '../pages/Contact'
-// import About from '../pages/About'
-// import Layout from '../pages/Layout'
+import Home from '../pages/Home'
+import Contact from '../pages/Contact'
+import About from '../pages/About'
+import Header from '../components/Header'
+import Layout from '../pages/Layout'
 const Home = lazy(()=> import("../pages/Home"))
 const About = lazy(()=> import("../pages/About"))
 const Contact = lazy(()=> import("../pages/Contact"))
