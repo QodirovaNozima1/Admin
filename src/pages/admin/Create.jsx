@@ -12,6 +12,7 @@ const Create = () => {
   const title = useRef(null)
   const desc = useRef(null)
   const year = useRef(null)
+  const img = useRef(null)
 
   const handleSubmit = e => {
     e.preventDefault()
@@ -19,12 +20,13 @@ const Create = () => {
       title: title.current.value,
       desc: desc.current.value,
       year: year.current.value,
+      img: img.current.value,
     }
     if(edit) {
       updateCar({id:edit.id, body:car })
         .unwrap()
         .then(()=>{
-          [title,desc,year].forEach(item=> {
+          [title,desc,year,img].forEach(item=> {
             item.current.value = ""
           })
           setEdit(null)
@@ -36,6 +38,7 @@ const Create = () => {
           title.current.value = ""
           desc.current.value = ""
           year.current.value = ""
+          img.current.value = ""
         })
     }
   }
@@ -47,6 +50,7 @@ const Create = () => {
     title.current.value = car.title
     desc.current.value = car.desc
     year.current.value = car.year
+    img.current.value = car.img
   }
   return (
     <div className='flex flex-col gap-8'>
@@ -55,6 +59,7 @@ const Create = () => {
           <input required ref={title} className='border p-2 rounded-sm focus:outline-none focus:ring-2 focus:ring-blue-400' type="text" placeholder='Title'/>
           <input required ref={desc} className='border p-2 rounded-sm focus:outline-none focus:ring-2 focus:ring-blue-400' type="text" placeholder='Description'/>
           <input required ref={year} className='border p-2 rounded-sm focus:outline-none focus:ring-2 focus:ring-blue-400' type="text" placeholder='Year'/>
+          <input required ref={img} className='border p-2 rounded-sm focus:outline-none focus:ring-2 focus:ring-blue-400' type="text" placeholder='Img url'/>
           <button disabled={isCreateLoading} type='submit' className='bg-blue-500 px-2 rounded-sm text-white cursor-pointer disabled:cursor-default disabled:opacity-50 '>{isCreateLoading ? "Loading": edit ? "Save" : "Create" }</button>
         </form>
       </div>
@@ -64,11 +69,11 @@ const Create = () => {
       <div className='container mx-auto grid grid-cols-4 gap-4 min-h-screen items-start content-start'>
         {
           data?.map(car => (
-            <div className='rounded-sm ' key={car.id}>
+            <div className='rounded-sm w-[260px] ' key={car.id}>
                           <div className="flex w-full h-full">
-                            <img className='h-[180px]' src="https://am-s3-bucket-assets.s3.eu-west-2.amazonaws.com/silverstone/prod/lot_images/xlarge/REC14375-2/REC14375-2_1.jpg.webp" alt="" />
+                            <img className='h-[180px] w-full object-fill' src={car.img} alt="" />
                           </div>
-                          <div className="flex flex-col gap-2 p-2 rounded-sm">
+                          <div className="flex flex-col gap-2 p-2 rounded-sm w-full">
                             <h2 className='text-xl font-bold  border-gray-200'>{car.title}</h2>
                             <p className='text-slate-500'>Lorem ipsum dolor, sit amet consectetur adipisicing.{car.desc}</p>
                             <p className='text-slate-500 border-b '>Year: {car.year}</p>
